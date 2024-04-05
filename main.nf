@@ -30,7 +30,7 @@ process FOO {
       image_source.save(name.replace(" ", "") + ".png")
       print('printing certificate of: '+name)
 
-  make_cert('${participant_name}')
+  make_cert('${participant_name.replace("'", "\\'")}')
   """
 }
 
