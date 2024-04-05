@@ -1,5 +1,5 @@
 process FOO {
-  container 'print_to_certs'
+  container 'mribeirodantas/print2certificates:latest'
   publishDir 'output', mode: 'copy'
 
   input:

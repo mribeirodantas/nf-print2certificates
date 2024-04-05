@@ -1,6 +1,3 @@
-## Build the container image
-docker build -t print_to_certs .
-
 ## Run the pipeline
 nextflow run main.nf --names names.txt --template CertificateAttendance.png --font GochiHand-Regular.ttf
 
