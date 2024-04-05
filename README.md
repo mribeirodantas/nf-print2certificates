@@ -1,3 +1,5 @@
+# nf-print2certificates
+
 ## Run the pipeline
 You can run a demo with the following command:
 ```
@@ -8,6 +10,9 @@ If you want to provide custom names, templates and fonts you can run with:
 ```
 nextflow run main.nf --names names.txt --template CertificateAttendance.png --font GochiHand-Regular.ttf
 ```
+
+## Custom coordinates
+You can also provide custom coordinates with `--x` and `--y`.
 
 ## Check the results
 Check the `output` folder in the current working directory to find the certificates

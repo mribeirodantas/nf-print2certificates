@@ -4,6 +4,7 @@ process FOO {
 
   input:
   val participant_name
+  tuple val(x), val(y)
   path font
   path template
 
@@ -18,7 +19,7 @@ process FOO {
 
   FONT_FILE = ImageFont.truetype(r'GochiHand-Regular.ttf', 100)
   FONT_COLOR = "#000000"
-  WIDTH, HEIGHT = 1100, 800
+  WIDTH, HEIGHT = ${x}, ${y}
 
 
   def make_cert(name):
@@ -39,6 +40,7 @@ workflow {
     .splitText { it.trim() }
     .set { participant_names }
   FOO(participant_names,
+      Channel.of([params.x, params.y]).first(),
       Channel.fromPath(params.font).first(),
       Channel.fromPath(params.template).first())
 }
