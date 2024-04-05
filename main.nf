@@ -1,6 +1,7 @@
 process FOO {
   container 'mribeirodantas/print2certificates:latest'
   publishDir 'output', mode: 'copy'
+  tag "${participant_name}"
 
   input:
   val participant_name
